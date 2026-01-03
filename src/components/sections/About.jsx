@@ -66,11 +66,11 @@ const About = () => {
                         transition={{ delay: 0.3 }}
                         className="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm"
                     >
-                        <h3 className="text-xl font-semibold text-white mb-6">Core Competencies</h3>
+                        <h3 className="text-xl font-semibold text-white mb-6">Technical Skills</h3>
                         <div className="space-y-4">
                             <div>
                                 <div className="flex justify-between text-sm mb-1">
-                                    <span className="text-gray-300">Data Engineering (SQL, ETL)</span>
+                                    <span className="text-gray-300">SQL & Database Mgmt</span>
                                     <span className="text-primary-glow">95%</span>
                                 </div>
                                 <div className="h-2 bg-black/20 rounded-full overflow-hidden">
@@ -79,7 +79,7 @@ const About = () => {
                             </div>
                             <div>
                                 <div className="flex justify-between text-sm mb-1">
-                                    <span className="text-gray-300">Data Visualization (Tableau, PowerBI)</span>
+                                    <span className="text-gray-300">Tableau & Power BI</span>
                                     <span className="text-primary-glow">90%</span>
                                 </div>
                                 <div className="h-2 bg-black/20 rounded-full overflow-hidden">
@@ -88,11 +88,29 @@ const About = () => {
                             </div>
                             <div>
                                 <div className="flex justify-between text-sm mb-1">
-                                    <span className="text-gray-300">Business Analysis</span>
+                                    <span className="text-gray-300">Python (Pandas/NumPy)</span>
                                     <span className="text-primary-glow">85%</span>
                                 </div>
                                 <div className="h-2 bg-black/20 rounded-full overflow-hidden">
                                     <div className="h-full bg-primary w-[85%] rounded-full"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="flex justify-between text-sm mb-1">
+                                    <span className="text-gray-300">Advanced Excel & VBA</span>
+                                    <span className="text-primary-glow">90%</span>
+                                </div>
+                                <div className="h-2 bg-black/20 rounded-full overflow-hidden">
+                                    <div className="h-full bg-primary w-[90%] rounded-full"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="flex justify-between text-sm mb-1">
+                                    <span className="text-gray-300">ETL (Informatica)</span>
+                                    <span className="text-primary-glow">88%</span>
+                                </div>
+                                <div className="h-2 bg-black/20 rounded-full overflow-hidden">
+                                    <div className="h-full bg-primary w-[88%] rounded-full"></div>
                                 </div>
                             </div>
                         </div>

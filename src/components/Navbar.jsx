@@ -16,8 +16,8 @@ const Navbar = () => {
         <nav className="fixed top-0 left-0 right-0 z-40 p-4">
             <div className="max-w-7xl mx-auto flex justify-between items-center bg-bg-card backdrop-blur-md rounded-2xl border border-white/10 px-6 py-3 shadow-glass">
                 {/* Brand/Logo */}
-                <div className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-primary-glow cursor-pointer">
-                    RS.
+                <div className="cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
+                    <img src="/logo.png" alt="Analyst Logo" className="h-10 w-10 md:h-12 md:w-12 rounded-full border border-white/20 shadow-lg" />
                 </div>
 
                 {/* Desktop Links */}

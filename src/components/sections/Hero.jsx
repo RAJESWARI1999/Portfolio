@@ -29,8 +29,10 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                     className="space-y-6"
                 >
+
+
                     <div className="inline-block px-4 py-2 rounded-full glass border border-white/10 mb-4">
-                        <span className="text-primary-glow text-sm font-medium tracking-wide">SENIOR ANALYST (AFRM)</span>
+                        <span className="text-primary-glow text-sm font-medium tracking-wide">SENIOR ANALYST</span>
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-tight">
@@ -46,32 +48,37 @@ const Hero = () => {
 
                     <div className="flex items-center justify-center gap-6 mt-8 flex-wrap">
                         {[
-                            { Icon: Github, href: "#", color: "hover:text-white" },
-                            { Icon: Linkedin, href: "#", color: "hover:text-blue-400" },
-                            { Icon: Twitter, href: "#", color: "hover:text-sky-400" },
-                            { Icon: Instagram, href: "#", color: "hover:text-pink-500" },
+                            { Icon: Github, href: "https://github.com/RAJESWARI1999", color: "hover:text-white" },
+                            { Icon: Linkedin, href: "https://www.linkedin.com/in/rajeswari-sivakumar1999/", color: "hover:text-blue-400" },
+                            { Icon: Instagram, href: "https://www.instagram.com/raji.official_1999", color: "hover:text-pink-500" },
                             { Icon: Mail, href: "mailto:rajishalini1999@gmail.com", color: "hover:text-primary-glow" },
-                            { Icon: ThreadsIcon, href: "#", color: "hover:text-white" }
+                            { Icon: ThreadsIcon, href: "https://www.threads.net/@raji.official_1999", color: "hover:text-white" }
                         ].map((social, idx) => (
                             <motion.a
                                 key={idx}
                                 href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 whileHover={{ scale: 1.1, translateY: -2 }}
                                 whileTap={{ scale: 0.95 }}
                                 className={`p-4 rounded-full neu-btn text-gray-400 transition-colors ${social.color}`}
                             >
-                                {social.Icon === ThreadsIcon ? <social.Icon /> : <social.Icon size={24} />}
+                                {social.Icon === ThreadsIcon ? <ThreadsIcon /> : <social.Icon size={24} />}
                             </motion.a>
                         ))}
                     </div>
 
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="mt-12 px-8 py-3 rounded-xl bg-primary hover:bg-primary-glow text-white font-semibold shadow-lg shadow-primary/30 transition-all"
-                    >
-                        Download Resume
-                    </motion.button>
+                    <div className="mt-12 flex justify-center gap-6">
+                        <motion.a
+                            href="/resume.pdf"
+                            download="Rajeswari_Sivakumar_Resume.pdf"
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="px-8 py-3 rounded-xl bg-primary hover:bg-primary-glow text-white font-semibold shadow-lg shadow-primary/30 transition-all cursor-pointer"
+                        >
+                            Download Resume
+                        </motion.a>
+                    </div>
                 </motion.div>
             </div>
         </section>
