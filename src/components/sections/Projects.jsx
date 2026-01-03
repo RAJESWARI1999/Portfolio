@@ -109,6 +109,17 @@ const Projects = () => {
                 ))}
             </div>
 
+            <div className="mt-16 text-center">
+                <a
+                    href="https://github.com/RAJESWARI1999?tab=repositories"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-white border-b border-primary hover:text-primary-glow transition-all pb-1 group"
+                >
+                    View All Projects <ArrowRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
+                </a>
+            </div>
+
             <AnimatePresence>
                 {selectedId && (
                     <>
