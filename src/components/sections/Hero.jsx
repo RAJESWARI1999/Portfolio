@@ -41,7 +41,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="text-xl md:text-2xl text-text-muted mt-4 max-w-2xl mx-auto font-light">
-                        Data Visualization Expert | SQL & Tableau Specialist
+                        Data Visualization Expert | SQL & Power BI Specialist
                         <br />
                         <span className="text-sm opacity-60">Bridging data and decisions with Power BI & Informatica</span>
                     </p>

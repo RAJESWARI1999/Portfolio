@@ -53,57 +53,58 @@ const Contact = () => {
 
     return (
         <section id="contact" className="py-24 px-6 max-w-7xl mx-auto">
+            {/* Centered Header */}
+            <div className="text-center mb-16 max-w-2xl mx-auto">
+                <div className="inline-block px-4 py-2 rounded-full glass border border-white/10 mb-6">
+                    <span className="text-primary-glow text-sm font-medium tracking-wide">GET IN TOUCH</span>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                    Let's work <br /> <span className="text-primary-glow">together.</span>
+                </h2>
+                <p className="text-gray-400 text-lg">
+                    I am currently available for new opportunities in Data Engineering and Business Intelligence.
+                    Let's create something meaningful.
+                </p>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-12 items-start">
                 {/* Left Column: Contact Info */}
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
+                    className="space-y-8"
                 >
-                    <div className="inline-block px-4 py-2 rounded-full glass border border-white/10 mb-6">
-                        <span className="text-primary-glow text-sm font-medium tracking-wide">GET IN TOUCH</span>
-                    </div>
-
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                        Let's work <br /> <span className="text-primary-glow">together.</span>
-                    </h2>
-
-                    <p className="text-gray-400 text-lg mb-12 max-w-md">
-                        I am currently available for new opportunities in Data Engineering and Business Intelligence.
-                        Let's create something meaningful.
-                    </p>
-
-                    <div className="space-y-8">
-                        <div className="flex items-center gap-6 group">
-                            <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-white group-hover:bg-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-300">
-                                <Mail size={24} />
-                            </div>
-                            <div>
-                                <h4 className="text-gray-400 text-sm mb-1 uppercase tracking-wider font-medium">Mail Me</h4>
-                                <a href="mailto:rajishalini1999@gmail.com" className="text-xl text-white font-semibold hover:text-primary-glow transition-colors">rajishalini1999@gmail.com</a>
-                            </div>
+                    <div className="flex items-center gap-6 group">
+                        <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-white group-hover:bg-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-300">
+                            <Mail size={24} />
                         </div>
-
-                        <div className="flex items-center gap-6 group">
-                            <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-white group-hover:bg-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-300">
-                                <Phone size={24} />
-                            </div>
-                            <div>
-                                <h4 className="text-gray-400 text-sm mb-1 uppercase tracking-wider font-medium">Call Me</h4>
-                                <a href="tel:+916374423740" className="text-xl text-white font-semibold hover:text-primary-glow transition-colors">+91 637 442 3740</a>
-                            </div>
-                        </div>
-
-                        <div className="flex items-center gap-6 group">
-                            <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-white group-hover:bg-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-300">
-                                <MapPin size={24} />
-                            </div>
-                            <div>
-                                <h4 className="text-gray-400 text-sm mb-1 uppercase tracking-wider font-medium">Location</h4>
-                                <span className="text-xl text-white font-semibold">Bangalore, India</span>
-                            </div>
+                        <div>
+                            <h4 className="text-gray-400 text-sm mb-1 uppercase tracking-wider font-medium">Mail Me</h4>
+                            <a href="mailto:rajishalini1999@gmail.com" className="text-xl text-white font-semibold hover:text-primary-glow transition-colors">rajishalini1999@gmail.com</a>
                         </div>
                     </div>
+
+                    <div className="flex items-center gap-6 group">
+                        <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-white group-hover:bg-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-300">
+                            <Phone size={24} />
+                        </div>
+                        <div>
+                            <h4 className="text-gray-400 text-sm mb-1 uppercase tracking-wider font-medium">Call Me</h4>
+                            <a href="tel:+916374423740" className="text-xl text-white font-semibold hover:text-primary-glow transition-colors">+91 63X XXX XX40</a>
+                        </div>
+                    </div>
+
+                    <div className="flex items-center gap-6 group">
+                        <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-white group-hover:bg-primary group-hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all duration-300">
+                            <MapPin size={24} />
+                        </div>
+                        <div>
+                            <h4 className="text-gray-400 text-sm mb-1 uppercase tracking-wider font-medium">Location</h4>
+                            <span className="text-xl text-white font-semibold">Bangalore, India</span>
+                        </div>
+                    </div>
+
 
                     <div className="flex gap-4 mt-12">
                         {[
@@ -199,12 +200,12 @@ const Contact = () => {
                         </button>
                     </form>
                 </motion.div>
-            </div>
+            </div >
 
             <div className="text-center mt-24 text-sm text-gray-600 border-t border-white/5 pt-8">
-                <p>© 2026 Rajeswari Sivakumar. Crafted with <span className="text-red-500">❤</span> by <a href="https://github.com/PavanRasipogula" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Pavan Rasipogula</a></p>
+                <p>© {new Date().getFullYear()} Rajeswari Sivakumar. Crafted with <span className="text-red-500">❤</span> by <a href="https://github.com/RAJESWARI1999" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">RAJESWARI</a></p>
             </div>
-        </section>
+        </section >
     );
 };
 

@@ -1,64 +1,118 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, ArrowRight, X } from 'lucide-react';
 
 const Projects = () => {
     const [selectedId, setSelectedId] = useState(null);
 
-    const projects = [
+    // 1. Manual Projects Data (Displayed First)
+    const manualProjects = [
         {
-            id: 1,
-            title: "HR Analytics Dashboard",
-            category: "Process Optimization",
-            description: "A deep dive into workforce metrics using Power BI. Analyzed attrition, retention rates, and employee satisfaction to provide actionable insights for HR management.",
-            tech: ["Power BI", "DAX", "Data Modeling"],
-            image: "/projects/hr_dashboard.png",
-            github: "https://github.com/RAJESWARI1999/-HR-Analytics-Dashboard-A-Deep-Dive-into-Workforce-Metrics",
-            stats: [
-                { label: "Attrition Reduced", value: "15%" },
-                { label: "Data Accuracy", value: "99%" }
-            ]
+            id: 'manual-1',
+            title: "Android Based Medicare Alert",
+            category: "Healthcare Tech",
+            description: "A medical emergency alert system using geo-fencing technology to trigger alerts when a patient enters or exits a specific location.",
+            tech: ["Android", "IoT", "Geo-Fencing", "Java"],
+            github: "#",
+            homepage: "",
+            image: "/projects/medicare_alert.png",
+            budget: "₹2 CR",
+            developer: "Anna University & Apollo Hospital Chennai",
+            stats: [],
+            featured: true
         },
         {
-            id: 2,
-            title: "Bank Loan Analysis",
-            category: "Financial Risk",
-            description: "Comprehensive analysis of loan data across US states. Identified regional trends, default risks, and approved loan distributions to assist banking strategies.",
-            tech: ["Tableau", "SQL", "Excel"],
-            image: "/projects/bank_loan.png",
-            github: "https://github.com/RAJESWARI1999/-Bank-Loan-Report-Dashboard-US-Bank-States-Power-BI-",
-            stats: [
-                { label: "Loan Vol Analyzed", value: "$5M+" },
-                { label: "Risk Factors", value: "12" }
-            ]
-        },
-        {
-            id: 3,
-            title: "Electric Vehicle Analysis",
-            category: "Market Research",
-            description: "Analyzed the EV market growth, battery technology trends, and adoption rates. Visualized key performance indicators for sustainable transport strategies.",
-            tech: ["Power BI", "Python", "Data Viz"],
-            image: "/projects/ev_analysis.png",
-            github: "https://github.com/RAJESWARI1999/Electric-Vehicle-Analysis-Dashboard---2024",
-            stats: [
-                { label: "Market Growth", value: "35%" },
-                { label: "Models Tracked", value: "50+" }
-            ]
-        },
-        {
-            id: 4,
-            title: "Amazon Sales Analysis",
-            category: "E-Commerce",
-            description: "Evaluated sales performance, product trends, and regional demand. Created an interactive dashboard to track revenue growth and seasonality.",
-            tech: ["Power BI", "SQL", "Forecasting"],
-            image: "/projects/amazon_sales.png",
-            github: "https://github.com/RAJESWARI1999/-Amazon-Sales-Analysis-Dashboard-2024-",
-            stats: [
-                { label: "Sales Growth", value: "22%" },
-                { label: "Regions Mapped", value: "Global" }
-            ]
+            id: 'manual-2',
+            title: "Affirm Data Solutions",
+            category: "Business Intelligence",
+            description: "Analysed business data to provide actionable insights. (MBA Project - Nov 2022)",
+            tech: ["Data Analysis", "Business Intelligence", "MBA"],
+            github: "#",
+            homepage: "",
+            image: "/projects/affirm_data.png",
+            budget: "₹75k",
+            developer: "MBA Project",
+            stats: [],
+            featured: true
         }
     ];
+
+    const [projects, setProjects] = useState(manualProjects);
+
+    // 2. Fetch Remaining Projects from GitHub
+    useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                const response = await fetch('https://api.github.com/users/RAJESWARI1999/repos');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch from GitHub');
+                }
+
+                const data = await response.json();
+
+                // Safety Check: Ensure data is an array
+                if (!Array.isArray(data)) {
+                    console.error("GitHub API returned non-array:", data);
+                    return;
+                }
+
+                const projectData = await Promise.all(
+                    data
+                        .filter(repo => !['PavanRasipogula', 'Project_R'].includes(repo.name))
+                        .map(async (repo) => {
+                            // Image Mapping
+                            // Description Mapping
+                            let description = repo.description || "No description available.";
+                            const name = repo.name.toLowerCase();
+
+                            if (name.includes('amazon')) {
+                                description = "Comprehensive dashboard analyzing Amazon sales trends, revenue metrics, and customer purchasing behavior.";
+                                imageUrl = '/projects/amazon_sales.png'; // Updated to simpler name if needed, but 'amazon_sales_analysis.png' was previous
+                            } else if (name.includes('hr-analytics') || name.includes('hr_analytics')) {
+                                description = "HR dashboard visualizing employee attrition, satisfaction scores, and retention strategies.";
+                                imageUrl = '/projects/hr_analytics.png';
+                            } else if (name.includes('bank') && name.includes('loan')) {
+                                description = "Financial analysis dashboard tracking loan applications, approval rates, and credit risk assessment.";
+                                imageUrl = '/projects/bank_loan_analysis.png';
+                            } else if (name.includes('ev-analysis') || name.includes('ev_analysis')) {
+                                description = "Data analysis of Electric Vehicle market trends, adoption rates, and charging infrastructure growth.";
+                                imageUrl = '/projects/ev_analysis.png';
+                            }
+
+                            // Standardized Data Structure
+                            return {
+                                id: repo.id,
+                                title: (repo.name || 'Untitled').replace(/-/g, ' ').toUpperCase(),
+                                category: "GitHub Project",
+                                description: description,
+                                tech: Array.isArray(repo.topics) ? repo.topics : [], // Safe Access
+                                github: repo.html_url || '#',
+                                homepage: repo.homepage || '',
+                                image: imageUrl,
+                                stats: [], // Default to empty array
+                                featured: false,
+                                budget: null,
+                                developer: null
+                            };
+                        })
+                );
+
+                // Merge: Manual Projects + Fetched Projects
+                setProjects(prev => {
+                    const combined = [...manualProjects, ...projectData];
+                    // Optional: Remove duplicates based on ID if necessary, but here we just combine
+                    return combined;
+                });
+
+            } catch (error) {
+                console.error("Error fetching projects:", error);
+                // Fallback to manual projects only if fetch fails
+                setProjects(manualProjects);
+            }
+        };
+
+        fetchProjects();
+    }, []);
 
     return (
         <section id="projects" className="py-24 px-6 max-w-7xl mx-auto">
@@ -68,7 +122,7 @@ const Projects = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-                {projects.map((project) => (
+                {projects.slice(0, 4).map((project) => (
                     <motion.div
                         layoutId={`card-${project.id}`}
                         key={project.id}
@@ -90,15 +144,31 @@ const Projects = () => {
                         </div>
 
                         <div className="p-8 relative z-20 -mt-12">
-                            <motion.h3 layoutId={`title-${project.id}`} className="text-2xl font-bold text-white mb-2 group-hover:text-primary-glow transition-colors">
+                            <motion.h3 layoutId={`title-${project.id}`} className="text-xl font-bold text-white mb-2 leading-tight">
                                 {project.title}
                             </motion.h3>
-                            <p className="text-gray-400 text-sm line-clamp-2 mb-6">
+
+                            {/* Meta Badges (Budget/Developer) */}
+                            <div className="flex flex-wrap gap-2 mb-4">
+                                {project.budget && (
+                                    <span className="px-2 py-0.5 rounded-md bg-green-500/20 border border-green-500/30 text-green-300 text-xs font-medium">
+                                        {project.budget}
+                                    </span>
+                                )}
+                                {project.developer && (
+                                    <span className="px-2 py-0.5 rounded-md bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-medium truncate max-w-[200px]">
+                                        {project.developer}
+                                    </span>
+                                )}
+                            </div>
+
+                            <p className="text-gray-400 text-sm mb-6 line-clamp-3">
                                 {project.description}
                             </p>
 
                             <div className="flex flex-wrap gap-2">
-                                {project.tech.map((t, i) => (
+                                {/* Safe Map with Array Check */}
+                                {Array.isArray(project.tech) && project.tech.slice(0, 3).map((t, i) => (
                                     <span key={i} className="text-xs font-medium px-3 py-1 rounded-full bg-white/5 text-gray-300 border border-white/5">
                                         {t}
                                     </span>
@@ -142,7 +212,7 @@ const Projects = () => {
                                             <motion.img
                                                 layoutId={`image-${project.id}`}
                                                 src={project.image}
-                                                className="w-full h-full object-cover"
+                                                className="w-full h-full object-fill"
                                             />
                                             <button
                                                 onClick={(e) => { e.stopPropagation(); setSelectedId(null); }}
@@ -175,7 +245,8 @@ const Projects = () => {
                                             </p>
 
                                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                                                {project.stats.map((stat, i) => (
+                                                {/* Safe Map for Stats */}
+                                                {Array.isArray(project.stats) && project.stats.map((stat, i) => (
                                                     <div key={i} className="p-4 rounded-2xl bg-white/5 border border-white/5 text-center">
                                                         <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
                                                         <div className="text-xs text-gray-500 uppercase tracking-wider">{stat.label}</div>
@@ -184,7 +255,8 @@ const Projects = () => {
                                             </div>
 
                                             <div className="flex flex-wrap gap-2">
-                                                {project.tech.map((t, i) => (
+                                                {/* Safe Map for Tech */}
+                                                {Array.isArray(project.tech) && project.tech.map((t, i) => (
                                                     <span key={i} className="px-4 py-2 rounded-full bg-white/5 text-white text-sm border border-white/10">
                                                         {t}
                                                     </span>
