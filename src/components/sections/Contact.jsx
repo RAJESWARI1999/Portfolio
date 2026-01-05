@@ -32,18 +32,21 @@ const Contact = () => {
                 body: JSON.stringify(formData),
             });
 
+            const data = await response.json();
+
             if (response.ok) {
                 setStatus('success');
                 setFormData({ name: '', email: '', subject: '', message: '' });
                 alert("Message Sent Successfully!");
             } else {
                 setStatus('error');
-                alert("Failed to send message. Please try again.");
+                console.error("Server Error:", data);
+                alert(`Failed to send: ${data.message || response.statusText} (${response.status})`);
             }
         } catch (error) {
-            console.error(error);
+            console.error("Network/Client Error:", error);
             setStatus('error');
-            alert("Something went wrong.");
+            alert(`Error occurred: ${error.message}`);
         }
     };
 
