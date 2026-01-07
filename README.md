@@ -2,7 +2,7 @@
 
 An interactive, modern portfolio website showcasing my journey as a **Senior Process Specialist (Data Analysis)**. Built with high-performance web technologies, this site highlights my experience in Data Engineering, BI Dashboards, and Strategic Analytics.
 
-![Portfolio Preview](public/vite.svg) (*Add a screenshot of your hero section here if available*)
+
 
 ## 🚀 Features
 
