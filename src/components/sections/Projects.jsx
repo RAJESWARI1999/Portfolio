@@ -81,7 +81,7 @@ const Projects = () => {
 
                 const fetchedProjects = data
                     .filter(repo => !['PavanRasipogula', 'Project_R'].includes(repo.name))
-                    .slice(1, 3) // Limit to exactly 2 GitHub projects
+                    .slice(3, 5) // Limit to exactly 2 GitHub projects
                     .map(repo => {
                         let imageUrl = `https://opengraph.githubassets.com/1/${repo.full_name}`;
                         let description = repo.description || "No description available.";
