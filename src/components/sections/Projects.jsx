@@ -13,7 +13,7 @@ const Projects = () => {
             category: "B.Tech Project",
             description: "Developed an Android-based medical emergency alert system using geo-fencing sensors. The system monitors patient location and triggers alerts to caregivers/hospitals when boundaries are crossed.",
             tech: ["Android", "IoT", "Geo-Fencing", "Java"],
-            github: "https://github.com/RAJESWARI1999",
+            github: "https://github.com/RAJESWARI1999/ANDROID-BASED-MEDICARE-ALERT-USING-GEO-FENCING-SENSOR",
             homepage: "",
             image: "/projects/medicare_alert.png",
             budget: null,
@@ -27,7 +27,7 @@ const Projects = () => {
             category: "MBA Project",
             description: "A comprehensive study on employee work-life balance at Zolostays. Analyzed survey data to identify stress factors and recommended HR policy implementations for better retention.",
             tech: ["HR Analytics", "SPSS", "Data Analysis"],
-            github: "https://github.com/RAJESWARI1999",
+            github: "https://github.com/RAJESWARI1999/-A-study-on-employee-work-life-balance-at-Zolostays-Property-Solution-",
             homepage: "",
             image: "/projects/mba_zolostays.png",
             budget: null,
@@ -41,7 +41,7 @@ const Projects = () => {
             category: "MS Project",
             description: "Proposed and simulated a 'Mixed Job Scheduler Scheme' for cloud computing environments to optimize resource allocation and reduce latency in high-traffic corporate networks.",
             tech: ["Cloud Computing", "Scheduling Algorithms", "Simulation"],
-            github: "https://github.com/RAJESWARI1999",
+            github: "https://github.com/RAJESWARI1999/-Mixed-Job-Scheduler-Scheme-for-Cloud-Computing-in-companies-",
             homepage: "",
             image: "/projects/ms_cloud.png",
             budget: null,
@@ -81,7 +81,7 @@ const Projects = () => {
 
                 const fetchedProjects = data
                     .filter(repo => !['PavanRasipogula', 'Project_R'].includes(repo.name))
-                    .slice(3, 5) // Limit to exactly 2 GitHub projects
+                    .slice(4, 6) // Limit to exactly 2 GitHub projects
                     .map(repo => {
                         let imageUrl = `https://opengraph.githubassets.com/1/${repo.full_name}`;
                         let description = repo.description || "No description available.";
