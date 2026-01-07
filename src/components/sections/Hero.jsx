@@ -90,7 +90,7 @@ const Hero = () => {
 
                     <div className="mt-12 flex justify-center gap-6">
                         <motion.a
-                            href="/resume.pdf"
+                            href="/Resume-Raji.official-2026.pdf"
                             download="Rajeswari_Sivakumar_Resume.pdf"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
