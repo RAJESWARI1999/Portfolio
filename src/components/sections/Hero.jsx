@@ -70,7 +70,7 @@ const Hero = () => {
                         {[
                             { Icon: Github, href: "https://github.com/RAJESWARI1999", color: "hover:text-white" },
                             { Icon: Linkedin, href: "https://www.linkedin.com/in/rajeswari-sivakumar1999/", color: "hover:text-blue-400" },
-                            { Icon: Instagram, href: "https://www.instagram.com/raji.official_1999", color: "hover:text-pink-500" },
+                            { Icon: Instagram, href: "https://www.instagram.com/mega_s_20_2", color: "hover:text-pink-500" },
                             { Icon: Mail, href: "mailto:rajishalini1999@gmail.com", color: "hover:text-primary-glow" },
                             { Icon: ThreadsIcon, href: "https://www.threads.net/@raji.official_1999", color: "hover:text-white" }
                         ].map((social, idx) => (
