@@ -113,7 +113,7 @@ const Contact = () => {
                         {[
                             { Icon: Linkedin, href: "https://www.linkedin.com/in/rajeswari-sivakumar1999/", color: "hover:bg-[#0077b5]" },
                             { Icon: Github, href: "https://github.com/RAJESWARI1999", color: "hover:bg-[#333]" },
-                            { Icon: Instagram, href: "https://www.instagram.com/raji.official_1999", color: "hover:bg-[#E4405F]" },
+                            { Icon: Instagram, href: "https://www.instagram.com/mega_s_20_2", color: "hover:bg-[#E4405F]" },
                             { Icon: ThreadsIcon, href: "https://www.threads.net/@raji.official_1999", color: "hover:bg-black" }
                         ].map((social, idx) => (
                             <a
