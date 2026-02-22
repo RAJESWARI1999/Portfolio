@@ -61,7 +61,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="text-xl md:text-2xl text-text-muted mt-4 max-w-2xl mx-auto font-light">
-                        Senior Process Specialist (Data Analysis) at Affirm Data Solutions
+                        Data Visualization & Business Intelligence Specialist
                         <br />
                         <span className="text-sm opacity-60">Over 4+ Years of Expertise in SQL, Tableau, Power BI, and Informatica</span>
                     </p>
