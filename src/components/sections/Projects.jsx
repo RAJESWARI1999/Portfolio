@@ -109,6 +109,11 @@ const Projects = () => {
                             imageUrl = '/projects/ev_analysis.png';
                             tech = ["Python", "Pandas", "Matplotlib", "Market Research"];
                         }
+                        else if (name.includes('android') || name.includes('medicare')) {
+                            description = "Developed an Android-based medical emergency alert system using geo-fencing sensors. The system monitors patient location and triggers alerts to caregivers when boundaries are crossed.";
+                            imageUrl = '/projects/android_medicare.png';
+                            tech = ["Android", "Java", "IoT", "Geo-Fencing"];
+                        }
 
                         // Standardized Data Structure
                         return {

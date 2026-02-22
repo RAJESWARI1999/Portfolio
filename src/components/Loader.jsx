@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import profileLoadingImg from '../assets/Profiles/profile2.jpeg';
 
 const Loader = ({ onLoaded }) => {
     useEffect(() => {
@@ -19,7 +19,8 @@ const Loader = ({ onLoaded }) => {
         >
             <div className="flex flex-col items-center">
                 {/* CSS Pulse Animation */}
-                <div className="relative w-24 h-24 mb-8">
+                <div className="relative w-24 h-24 mb-8 flex items-center justify-center">
+                    <img src={profileLoadingImg} alt="Loading Profile" className="w-16 h-16 rounded-full object-cover z-10" />
                     <div className="absolute inset-0 border-4 border-t-primary border-r-transparent border-b-transparent border-l-transparent rounded-full animate-spin"></div>
                     <div className="absolute inset-2 border-4 border-t-transparent border-r-primary-glow border-b-transparent border-l-transparent rounded-full animate-spin-reverse"></div>
                     <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full animate-pulse"></div>

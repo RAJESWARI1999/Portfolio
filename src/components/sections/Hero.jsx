@@ -35,7 +35,7 @@ const Hero = () => {
                     className="space-y-6"
                 >
                     <div className="inline-block px-4 py-2 rounded-full glass border border-white/10 mb-4">
-                        <span className="text-primary-glow text-sm font-medium tracking-wide">SENIOR DATA ANALYST</span>
+                        <span className="text-primary-glow text-sm font-medium tracking-wide">MIS REPORT ANALYST</span>
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-tight">
@@ -61,9 +61,9 @@ const Hero = () => {
                     </h1>
 
                     <p className="text-xl md:text-2xl text-text-muted mt-4 max-w-2xl mx-auto font-light">
-                        Data Visualization Expert | SQL & Power BI Specialist
+                        Senior Process Specialist (Data Analysis) at Affirm Data Solutions
                         <br />
-                        <span className="text-sm opacity-60">Bridging data and decisions with Power BI & Informatica</span>
+                        <span className="text-sm opacity-60">Over 4+ Years of Expertise in SQL, Tableau, Power BI, and Informatica</span>
                     </p>
 
                     <div className="flex items-center justify-center gap-6 mt-8 flex-wrap">
