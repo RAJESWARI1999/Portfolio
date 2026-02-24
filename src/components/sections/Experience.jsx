@@ -5,7 +5,7 @@ const Experience = () => {
     const jobs = [
         {
             company: "Affirm Data Solutions",
-            role: "Senior Process Specialist (Data Analysis)",
+            role: "MIS Report Analyst",
             location: "Bangalore",
             period: "Feb 2022 – Present",
             bullets: [
