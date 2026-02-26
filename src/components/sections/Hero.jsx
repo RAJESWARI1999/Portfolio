@@ -35,7 +35,7 @@ const Hero = () => {
                     className="space-y-6"
                 >
                     <div className="inline-block px-4 py-2 rounded-full glass border border-white/10 mb-4">
-                        <span className="text-primary-glow text-sm font-medium tracking-wide">MIS REPORT ANALYST</span>
+                        <span className="text-primary-glow text-sm font-medium tracking-wide">MIS REPORTING ANALYST</span>
                     </div>
 
                     <h1 className="text-6xl md:text-8xl font-bold tracking-tight leading-tight">

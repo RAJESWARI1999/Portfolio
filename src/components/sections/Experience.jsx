@@ -5,7 +5,7 @@ const Experience = () => {
     const jobs = [
         {
             company: "Affirm Data Solutions",
-            role: "MIS Report Analyst",
+            role: "MIS Reporting Analyst",
             location: "Bangalore",
             period: "Feb 2022 – Present",
             bullets: [
