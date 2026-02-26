@@ -88,13 +88,15 @@ const Hero = () => {
                         ))}
                     </div>
 
-                    <div className="mt-12 flex justify-center gap-6">
+                    <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6">
                         <motion.a
                             href="/Rajeshwari_Resume_2026.pdf"
                             download="Rajeshwari_Resume_2026.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-8 py-3 rounded-xl bg-primary hover:bg-primary-glow text-white font-semibold shadow-lg shadow-primary/30 transition-all cursor-pointer"
+                            className="px-8 py-3 rounded-xl bg-primary hover:bg-primary-glow text-white font-semibold shadow-lg shadow-primary/30 transition-all cursor-pointer w-full sm:w-auto"
                         >
                             Download Resume
                         </motion.a>
@@ -102,7 +104,7 @@ const Hero = () => {
                             href="#projects"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-8 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-all cursor-pointer"
+                            className="px-8 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-medium hover:bg-white/10 transition-all cursor-pointer w-full sm:w-auto"
                         >
                             View Projects
                         </motion.a>
